@@ -14,3 +14,20 @@ jobs:
    
     - name: Run Python script
       run: python file.py
+
+
+  Secret-access:
+   needs: build
+   runs-on: ubuntu-latest
+
+   steps:
+    - name: Checkout repo
+      uses: action/checkout@v2
+      
+    - name: use a secret variable
+      env: 
+       my-secret: secrets.my_secret_token
+      run: |
+       echo "my secret is $my-secret"
+    
+      
