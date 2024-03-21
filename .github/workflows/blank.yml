@@ -20,6 +20,8 @@ jobs:
    needs: build
    runs-on: ubuntu-latest
 
+   if: ${{always()}}
+
    steps:
     - name: Checkout repo
       uses: action/checkout@v2
