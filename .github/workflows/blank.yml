@@ -28,7 +28,7 @@ jobs:
       
     - name: use a secret variable
       env: 
-       my-secret: secrets.my_secret_token
+       my-secret: ${{secrets.my_secret_token}}
       run: |
        echo "my secret is $my-secret"
     
